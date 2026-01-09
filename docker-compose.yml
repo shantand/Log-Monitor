@@ -10,7 +10,7 @@ services:
       - bootstrap.memory_lock=true
       - OPENSEARCH_JAVA_OPTS=-Xms200m -Xmx200m
       - OPENSEARCH_USERNAME=admin
-      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=StrongPass@123
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=<>
       - OPENSEARCH_SECURITY_ENABLED=false
     ulimits:
       memlock:
@@ -28,7 +28,7 @@ services:
       - OPENSEARCH_HOSTS=["https://opensearch:9200"]
       - OPENSEARCH_SSL_VERIFICATIONMODE=none
       - OPENSEARCH_USERNAME=kibanaserver
-      - OPENSEARCH_PASSWORD=kibanaserver
+      - OPENSEARCH_PASSWORD=<>
     ports:
       - "5601:5601"
     depends_on:
