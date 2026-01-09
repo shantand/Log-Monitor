@@ -4,7 +4,11 @@ from opensearchpy import OpenSearch
 
 client = OpenSearch(
     hosts=[{"host": "localhost", "port": 9200}],
-    use_ssl=False,
+    use_ssl=True,
+    verify_certs=False,        # Disable certificate verification
+    ssl_assert_hostname=False, # Disable hostname verification
+    ssl_show_warn=False,       # Hide the resulting "InsecureRequest" warnings
+    http_auth=('admin', 'StrongPass@123')
 )
 
 index_name = "script-logs"
